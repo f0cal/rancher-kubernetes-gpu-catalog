@@ -32,6 +32,7 @@ kubelet:
         - --cluster-domain=cluster.local
         - --network-plugin=cni
         - --cni-conf-dir=/etc/cni/managed.d
+        - --feature-gates=DevicePlugins=true
         - --anonymous-auth=false
         - --client-ca-file=/etc/kubernetes/ssl/ca.pem
         {{- if and (ne .Values.REGISTRY "") (ne .Values.POD_INFRA_CONTAINER_IMAGE "") }}
